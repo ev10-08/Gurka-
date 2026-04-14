@@ -74,7 +74,7 @@ int main()
             player3Hand.clear();
 
             int deckIndex = 0;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 6; i++) {
                 if (active[0]) {
                     dealCards(deck, player1Hand, 1, deckIndex);
                 }
@@ -100,7 +100,7 @@ int main()
                 }
             }
 
-            for (int trick = 0; trick < 5; trick++) {
+            for (int trick = 0; trick < 6; trick++) {
                 bool isLastTrick = (trick == 4);
                 displayTrickHeader(trick + 1, isLastTrick);
 
@@ -247,8 +247,8 @@ void displayRules () { //displays the game rules to the user
     cout << "--------------------------------------" << endl;
     cout << "|                                    |" << endl;
     cout << "| - Play a card with a higher or     |" << endl;
-    cout << "|   equal value of the highest       |
-    cout << "|   played card OR play your lowest  |
+    cout << "|   equal value of the highest       |" << endl;
+    cout << "|   played card OR play your lowest  |" << endl;
     cout << "|   card if you can't match the      |" << endl;
     cout << "|   highest played card.             |" << endl;
     cout << "|                                    |" << endl;
@@ -358,17 +358,17 @@ void displayScores (int scores[], bool active[]) { //displays current scores for
     if (active[0]) {
         cout << "  You: " << scores[0] << " points" << endl;
     } else {
-        cout << "  You: ELIMINATED (cucumber!)" << endl;
+        cout << "  You: ELIMINATED" << endl;
     }
     if (active[1]) {
         cout << "  Bot 1: " << scores[1] << " points" << endl;
     } else {
-        cout << "  Bot 1: ELIMINATED (cucumber!)" << endl;
+        cout << "  Bot 1: ELIMINATED" << endl;
     }
     if (active[2]) {
         cout << "  Bot 2: " << scores[2] << " points" << endl;
     } else {
-        cout << "  Bot 2: ELIMINATED (cucumber!)" << endl;
+        cout << "  Bot 2: ELIMINATED" << endl;
     }
 }
 
@@ -394,17 +394,17 @@ void displayGameOver (int scores[], bool active[]) { //displays the final game r
     cout << "\nFinal Scores:" << endl;
     cout << "  You: " << scores[0] << " points";
     if (!active[0]) {
-        cout << " (cucumber)";
+        cout << " (eliminated)";
     }
     cout << endl;
     cout << "  Bot 1: " << scores[1] << " points";
     if (!active[1]) {
-        cout << " (cucumber)";
+        cout << " (eliminated)";
     }
     cout << endl;
     cout << "  Bot 2: " << scores[2] << " points";
     if (!active[2]) {
-        cout << " (cucumber)";
+        cout << " (eliminated)";
     }
     cout << endl;
 }
@@ -528,7 +528,7 @@ void removeCardFromHand (vector<int>& hand, int index) { //removes a card from h
 void checkElimination (int& score, bool& isActive, string name) { //checks if a player should be eliminated at 30+ points
     if (isActive and score >= 30) {
         isActive = false;
-        cout << "\n" << name << " reached " << score << " points - CUCUMBER! ELIMINATED!" << endl;
+        cout << "\n" << name << " reached " << score << " points - ELIMINATED!" << endl;
     }
 }
 
@@ -750,4 +750,3 @@ int countActivePlayers (bool active[]) { //counts how many players are still act
     }
     return count;
 }
-
