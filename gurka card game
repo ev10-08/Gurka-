@@ -4,7 +4,7 @@
 using namespace std;
 
 //declaring all of the functions being used throughout the program
-void displayIntro (); //displays the welcome intro and prompts user to see rules
+void displayIntro (); //displays the welcome intro and prompts the user to see the rules
 void displayRules (); //displays the game rules to the user
 void displayHand (vector<int>& hand); //displays ASCII art for player's hand
 void displayPlayedCard (int card); //displays a single played card as ASCII art
@@ -203,15 +203,15 @@ int main()
     }
 }
 
-void displayIntro () { //displays the welcome intro and prompts user to see rules
+void displayIntro () { //displays the welcome intro and prompts the user to see the rules
     int rulesChoice = 0, readyChoice = 0;
     cout << "----------------------------------------------" << endl;
     cout << "|                                            |" << endl;
     cout << "|   Welcome to Elijah and Connor's Gurka     |" << endl;
     cout << "|               program!                     |" << endl;
     cout << "|                                            |" << endl;
-    cout << "|    - Intended to be played on console      |" << endl;
-    cout << "|            using full screen -             |" << endl;
+    cout << "|      - Game intended to be played on       |" << endl;
+    cout << "|        console using full screen -         |" << endl;
     cout << "|                                            |" << endl;
     cout << "|      Would you like to see the rules?      |" << endl;
     cout << "|                                            |" << endl;
@@ -227,7 +227,7 @@ void displayIntro () { //displays the welcome intro and prompts user to see rule
     if (rulesChoice == 1) {
         displayRules();
         cout << "\n---------------------------------------------" << endl;
-        cout << "|        When you're ready, press 1.        |" << endl;
+        cout << "|        Once you're ready, press 1.        |" << endl;
         cout << "---------------------------------------------" << endl;
         cin >> readyChoice;
         while (!cin or readyChoice != 1) { //invalid input/fail check for ready prompt
@@ -246,10 +246,11 @@ void displayRules () { //displays the game rules to the user
     cout << "|           GURKA RULES              |" << endl;
     cout << "--------------------------------------" << endl;
     cout << "|                                    |" << endl;
-    cout << "| - Play a card >= highest played    |" << endl;
-    cout << "|   OR play your lowest card         |" << endl;
-    cout << "|   if you can't match the           |" << endl;
-    cout << "|   highest played card              |" << endl;
+    cout << "| - Play a card with a higher or     |" << endl;
+    cout << "|   equal value of the highest       |
+    cout << "|   played card OR play your lowest  |
+    cout << "|   card if you can't match the      |" << endl;
+    cout << "|   highest played card.             |" << endl;
     cout << "|                                    |" << endl;
     cout << "| - Highest card in LAST trick       |" << endl;
     cout << "|   scores penalty points            |" << endl;
