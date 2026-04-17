@@ -101,7 +101,7 @@ int main()
             }
 
             for (int trick = 0; trick < 6; trick++) {
-                bool isLastTrick = (trick == 4);
+                bool isLastTrick = (trick == 5);
                 displayTrickHeader(trick + 1, isLastTrick);
 
                 int highestValue = -1;
