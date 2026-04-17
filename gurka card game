@@ -636,7 +636,11 @@ string getPlayerName (int playerIndex) { //returns player name based on index
 }
 
 void displayCardPlayed (string playerName, string valStr, string suitStr) { //displays what card a player played
-    cout << playerName << " plays: " << valStr << " of " << suitStr << endl;
+    if (playerName == "You") {
+        cout << playerName << " played: " << valStr << " of " << suitStr << endl;
+    } else {
+        cout << playerName << " plays: " << valStr << " of " << suitStr << endl;
+    }
 }
 
 void displayTrickWinner (string winnerName) { //displays who won the trick
